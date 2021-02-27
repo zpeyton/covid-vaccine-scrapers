@@ -31,7 +31,7 @@ async function execute() {
     const browser = process.env.DEVELOPMENT
         ? await Puppeteer.launch({
               executablePath: process.env.CHROMEPATH,
-              headless: false,
+              headless: true,
           })
         : await Puppeteer.launch({
               args: chromium.args,
@@ -64,7 +64,7 @@ async function execute() {
         }
 
         let finalResultsArray = [];
-        if (process.argv.length <= 2) {
+        if (process.argv.length <= 2 && !process.env.SINGLESCRAPER) {
             // Only add default data if we're not testing individual scrapers.
             // We are not passing in the optional 3rd arg of mergeResults;
             // this means that there is no time limit on stale data being merged in.

@@ -11,6 +11,7 @@
         "puppeteer-extra-plugin-recaptcha": "^3.3.2",
         "puppeteer-extra-plugin-stealth": "^2.7.5",
         "rimraf": "^3.0.2",
+        "twilio": "^3.57.0",
         "us-zips": "^4.0.2"
     },
     "devDependencies": {
